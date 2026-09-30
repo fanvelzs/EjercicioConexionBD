@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="tblVista" prefHeight="570.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicioconexionbd.controller.LibroController">
+    <children>
+        <Label layoutX="205.0" layoutY="14.0" text="Catálogo de Libros">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+
+        <GridPane layoutX="31.0" layoutY="56.0" prefWidth="578.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="488.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Título:">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Autor:" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Categoría:" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Precio:" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Stock:" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="txtTitulo" promptText="Escriba el título del libro" GridPane.columnIndex="1" />
+                <TextField fx:id="txtAutor" promptText="Escriba el autor del libro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbCategoria" prefHeight="26.0" prefWidth="488.0" promptText="Seleccione una categoría" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtPrecio" promptText="Precio del libro (C$)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtStock" promptText="Cantidad de unidades en existencia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+
+        <Separator layoutY="245.0" prefHeight="8.0" prefWidth="640.0" />
+
+        <TableView fx:id="tblLibros" layoutX="31.0" layoutY="260.0" prefHeight="230.0" prefWidth="578.0">
+            <columns>
+                <TableColumn fx:id="colTitulo" prefWidth="180.0" text="Título" />
+                <TableColumn fx:id="colAutor" prefWidth="130.0" text="Autor" />
+                <TableColumn fx:id="colCategoria" prefWidth="120.0" text="Categoría" />
+                <TableColumn fx:id="colPrecio" prefWidth="75.0" text="Precio" />
+                <TableColumn fx:id="colStock" prefWidth="70.0" text="Stock" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="guardarLibro" layoutX="365.0" layoutY="510.0" mnemonicParsing="false" onAction="#guardarLibro" prefHeight="26.0" prefWidth="75.0" text="Guardar" />
+        <Button fx:id="limpiarCampos" layoutX="450.0" layoutY="510.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="26.0" prefWidth="75.0" text="Limpiar" />
+        <Button fx:id="cargarLibro" layoutX="534.0" layoutY="510.0" mnemonicParsing="false" onAction="#cargarLibro" prefHeight="26.0" prefWidth="75.0" text="Actualizar" />
+    </children>
+</AnchorPane>
